@@ -8,4 +8,4 @@ class UName(Base):
     u_name = Column(String(128))
     created_at = Column(DateTime, default=datetime.now())
     updated_at = Column(DateTime, default=datetime.now())
-\
+
