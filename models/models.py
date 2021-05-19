@@ -9,3 +9,4 @@ class UName(Base):
     created_at = Column(DateTime, default=datetime.now())
     updated_at = Column(DateTime, default=datetime.now())
 
+    def __init__(self, u_id=None, u_name=None, created_at=None, updated_at=None):
