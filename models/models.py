@@ -51,3 +51,19 @@ class RaceCalendar(Base):
 
     def __repr__(self):
         return '<race_name %r>' % (self.race_name)
+
+class Calender(Base):
+    __tablename__ = 'calendar'
+    calendar_id = Column(Integer, primary_key=True)
+    calendar_name = Column(String(128))
+    created_at = Column(DateTime, default=datetime.now())
+    updated_at = Column(DateTime, default=datetime.now())
+
+    def __init__(self, calendar_id=None, calendar_name=None, created_at=None, updated_at=None):
+        self.calendar_id = calendar_id
+        self.calendar_name = calendar_name
+        self.created_at = created_at
+        self.updated_at = updated_at
+
+    def __repr__(self):
+        return '<calendar_name %r>' % (self.calendar_name)
