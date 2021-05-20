@@ -14,3 +14,6 @@ class UName(Base):
         self.u_name = u_name
         self.created_at = created_at
         self.updated_at = updated_at
+
+    def __repr__(self):
+        return '<U_NAME %r>' % (self.u_name)
