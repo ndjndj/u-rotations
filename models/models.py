@@ -44,7 +44,9 @@ class RaceCalendar(Base):
     class_id = Column(Integer)
     calendar_id = Column(Integer)
     race_grade_id = Column(Integer)
-    race_grade_name = Column(String(128))
+    race_grade = Column(String(128))
+    race_course_id = Column(Integer)
+    race_course = Column(String(128))
     race_name = Column(String(128))
     race_meters = Column(Integer)
     race_type_distance_id = Column(Integer)
@@ -59,7 +61,9 @@ class RaceCalendar(Base):
                       class_id=None,
                       calendar_id=None,
                       race_grade_id=None,
-                      race_grade_name=None,
+                      race_grade=None,
+                      race_course_id=None,
+                      race_course=None,
                       race_name=None,
                       race_meters=None,
                       race_type_distance_id=None,
@@ -73,7 +77,9 @@ class RaceCalendar(Base):
         self.class_id = class_id
         self.calendar_id = calendar_id
         self.race_grade_id = race_grade_id
-        self.race_grade_name = race_grade_name
+        self.race_grade = race_grade
+        self.race_course_id = race_course_id
+        self.race_course = race_course
         self.race_name = race_name
         self.race_meters = race_meters
         self.race_type_distance_id = race_type_distance_id
