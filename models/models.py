@@ -23,12 +23,14 @@ class UName(Base):
 class URaceSchedule(Base):
     __tablename__ = 'u-race-schedule'
     u_id = Column(Integer, primary_key=True)
+    class_id = Column(Integer)
     race_id = Column(Integer)
     created_at = Column(DateTime, default=datetime.now())
     updated_at = Column(DateTime, default=datetime.now())
 
-    def __init__(self, u_id=None, race_id=None, created_at=None, updated_at=None):
+    def __init__(self, u_id=None, class_id=None, race_id=None, created_at=None, updated_at=None):
         self.u_id = u_id
+        self.class_id = class_id
         self.race_id = race_id
         self.created_at = created_at
         self.updated_at = updated_at
@@ -39,6 +41,7 @@ class URaceSchedule(Base):
 class RaceCalendar(Base):
     __tablename__ = 'race-calendar'
     race_id = Column(Integer, primary_key=True)
+    class_id = Column(Integer)
     calendar_id = Column(Integer)
     race_name = Column(String(128))
     race_meters = Column(Integer)
@@ -47,8 +50,9 @@ class RaceCalendar(Base):
     created_at = Column(DateTime, default=datetime.now())
     updated_at = Column(DateTime, default=datetime.now())
 
-    def __init__(self, race_id=None, calendar_id=None, race_name=None, race_meters=None, race_type_distance=None, race_type_ground=None, created_at=None, updated_at=None):
+    def __init__(self, race_id=None, class_id=None, calendar_id=None, race_name=None, race_meters=None, race_type_distance=None, race_type_ground=None, created_at=None, updated_at=None):
         self.race_id = race_id
+        self.class_id = class_id
         self.calendar_id = calendar_id
         self.race_name = race_name
         self.race_meters = race_meters
@@ -62,12 +66,14 @@ class RaceCalendar(Base):
 
 class Calender(Base):
     __tablename__ = 'calendar'
+    class_id = Column(Integer, primary_key=True)
     calendar_id = Column(Integer, primary_key=True)
     calendar_name = Column(String(128))
     created_at = Column(DateTime, default=datetime.now())
     updated_at = Column(DateTime, default=datetime.now())
 
-    def __init__(self, calendar_id=None, calendar_name=None, created_at=None, updated_at=None):
+    def __init__(self, calendar_id=None, class_id=None, calendar_name=None, created_at=None, updated_at=None):
+        self.class_id = class_id
         self.calendar_id = calendar_id
         self.calendar_name = calendar_name
         self.created_at = created_at
