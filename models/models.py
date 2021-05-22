@@ -43,16 +43,18 @@ class RaceCalendar(Base):
     race_id = Column(Integer, primary_key=True)
     class_id = Column(Integer)
     calendar_id = Column(Integer)
-    race_grade_id = Column(Integer)
-    race_grade = Column(String(128))
-    race_course_id = Column(Integer)
-    race_course = Column(String(128))
     race_name = Column(String(128))
-    race_meters = Column(Integer)
-    race_type_distance_id = Column(Integer)
-    race_type_distance = Column(String(128))
-    race_type_ground_id = Column(Integer)
-    race_type_ground = Column(String(128))
+    meters = Column(Integer)
+    grade_id = Column(Integer)
+    grade = Column(String(128))
+    course_id = Column(Integer)
+    course = Column(String(128))
+    roll_id = Column(Integer)
+    roll = Column(String(128))
+    type_distance_id = Column(Integer)
+    type_distance = Column(String(128))
+    type_ground_id = Column(Integer)
+    type_ground = Column(String(128))
     created_at = Column(DateTime, default=datetime.now())
     updated_at = Column(DateTime, default=datetime.now())
 
@@ -60,32 +62,36 @@ class RaceCalendar(Base):
                       race_id=None,
                       class_id=None,
                       calendar_id=None,
-                      race_grade_id=None,
-                      race_grade=None,
-                      race_course_id=None,
-                      race_course=None,
                       race_name=None,
-                      race_meters=None,
-                      race_type_distance_id=None,
-                      race_type_distance=None,
-                      race_type_ground=None,
-                      race_type_ground_id=None,
+                      meters=None,
+                      grade_id=None,
+                      grade=None,
+                      course_id=None,
+                      course=None,
+                      roll_id=None,
+                      roll=None,
+                      type_distance_id=None,
+                      type_distance=None,
+                      type_ground_id=None,
+                      type_ground=None,
                       created_at=None,
                       updated_at=None
     ):
         self.race_id = race_id
         self.class_id = class_id
         self.calendar_id = calendar_id
-        self.race_grade_id = race_grade_id
-        self.race_grade = race_grade
-        self.race_course_id = race_course_id
-        self.race_course = race_course
         self.race_name = race_name
-        self.race_meters = race_meters
-        self.race_type_distance_id = race_type_distance_id
-        self.race_type_distance = race_type_distance
-        self.race_type_ground_id = race_type_ground_id
-        self.race_type_ground = race_type_ground
+        self.meters = meters
+        self.grade_id = grade_id
+        self.grade = grade
+        self.course_id = course_id
+        self.course = course
+        self.roll_id = roll_id
+        self.roll = roll
+        self.type_distance_id = type_distance_id
+        self.type_distance = type_distance
+        self.type_ground_id = type_ground_id
+        self.type_ground = type_ground
         self.created_at = created_at
         self.updated_at = updated_at
 
