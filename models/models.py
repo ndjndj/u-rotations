@@ -43,6 +43,8 @@ class RaceCalendar(Base):
     race_id = Column(Integer, primary_key=True)
     class_id = Column(Integer)
     calendar_id = Column(Integer)
+    race_grade_id = Column(Integer)
+    race_grade_name = Column(String(128))
     race_name = Column(String(128))
     race_meters = Column(Integer)
     race_type_distance = Column(String(128))
@@ -50,10 +52,12 @@ class RaceCalendar(Base):
     created_at = Column(DateTime, default=datetime.now())
     updated_at = Column(DateTime, default=datetime.now())
 
-    def __init__(self, race_id=None, class_id=None, calendar_id=None, race_name=None, race_meters=None, race_type_distance=None, race_type_ground=None, created_at=None, updated_at=None):
+    def __init__(self, race_id=None, class_id=None, calendar_id=None, race_grade_id=None, race_grade_name=None, race_name=None, race_meters=None, race_type_distance=None, race_type_ground=None, created_at=None, updated_at=None):
         self.race_id = race_id
         self.class_id = class_id
         self.calendar_id = calendar_id
+        self.race_grade_id = race_grade_id
+        self.race_grade_name = race_grade_id
         self.race_name = race_name
         self.race_meters = race_meters
         self.race_type_distance = race_type_distance
