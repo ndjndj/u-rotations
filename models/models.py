@@ -54,9 +54,21 @@ class RaceCalendar(Base):
     created_at = Column(DateTime, default=datetime.now())
     updated_at = Column(DateTime, default=datetime.now())
 
-    def __init__(self, race_id=None, class_id=None, calendar_id=None,
-    race_grade_id=None, race_grade_name=None, race_name=None,
-     race_meters=None, race_type_distance_id=None, race_type_distance=None, race_type_ground=None, race_type_ground_id=None, created_at=None, updated_at=None):
+    def __init__(self,
+                      race_id=None,
+                      class_id=None,
+                      calendar_id=None,
+                      race_grade_id=None,
+                      race_grade_name=None,
+                      race_name=None,
+                      race_meters=None,
+                      race_type_distance_id=None,
+                      race_type_distance=None,
+                      race_type_ground=None,
+                      race_type_ground_id=None,
+                      created_at=None,
+                      updated_at=None
+    ):
         self.race_id = race_id
         self.class_id = class_id
         self.calendar_id = calendar_id
