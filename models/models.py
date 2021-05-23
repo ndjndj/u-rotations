@@ -1,14 +1,13 @@
-from sqlalchemy import Column, Integer, String, Text, DateTime
+from sqlalchemy import Column, Integer, String
 from models.database import Base
-from datetime import datetime
 
 class UName(Base):
     __tablename__ = 'u-name'
     u_id = Column(Integer, primary_key=True)
     u_farm_name = Column(String(128))
     u_name = Column(String(128))
-    created_at = Column(DateTime, default=datetime.now())
-    updated_at = Column(DateTime, default=datetime.now())
+    created_at = Column(String(128))
+    updated_at = Column(String(128))
 
     def __init__(self, u_id=None, u_farm_name=None, u_name=None, created_at=None, updated_at=None):
         self.u_id = u_id
@@ -25,8 +24,8 @@ class URaceSchedule(Base):
     u_id = Column(Integer, primary_key=True)
     class_id = Column(Integer)
     race_id = Column(Integer)
-    created_at = Column(DateTime, default=datetime.now())
-    updated_at = Column(DateTime, default=datetime.now())
+    created_at = Column(String(128))
+    updated_at = Column(String(128))
 
     def __init__(self, u_id=None, class_id=None, race_id=None, created_at=None, updated_at=None):
         self.u_id = u_id
@@ -55,8 +54,8 @@ class RaceCalendar(Base):
     type_distance = Column(String(128))
     type_ground_id = Column(Integer)
     type_ground = Column(String(128))
-    created_at = Column(DateTime, default=datetime.now())
-    updated_at = Column(DateTime, default=datetime.now())
+    created_at = Column(String(128))
+    updated_at = Column(String(128))
 
     def __init__(self,
                       race_id=None,
@@ -103,8 +102,8 @@ class Calender(Base):
     class_id = Column(Integer, primary_key=True)
     calendar_id = Column(Integer, primary_key=True)
     calendar_name = Column(String(128))
-    created_at = Column(DateTime, default=datetime.now())
-    updated_at = Column(DateTime, default=datetime.now())
+    created_at = Column(String(128))
+    updated_at = Column(String(128))
 
     def __init__(self, calendar_id=None, class_id=None, calendar_name=None, created_at=None, updated_at=None):
         self.class_id = class_id
