@@ -5,9 +5,25 @@
         <title>u-name 一覧</title>
     </head>
     <body>
-    <h1>u-name 一覧</h1>
-    {% for u_name in u_names %}
-    
-    {% endfor %}
+        <h1>u-name 一覧</h1>
+        <table>
+            <tr>
+                <th>u-name-id</th>
+                <th>u-farm-name</th>
+                <th>u-name</th>
+                <th>created_at</th>
+                <th>updated_at</th>
+            </tr>
+
+            {% for u_name in u_names %}
+            <tr>
+                <td>{{u_name.u_id}}</td>
+                <td>{{u_name.u_farm_name}}</td>
+                <td>{{u_name.u_name}}</td>
+                <td>{{u_name.created_at}}</td>
+                <td>{{u_name.updated_at}}</td>
+            </tr>
+            {% endfor %}
+        </table>
     </body>
 </html>
