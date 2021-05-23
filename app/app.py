@@ -1,4 +1,3 @@
-from logging import NullHandler
 from flask import Flask, render_template, request
 from models.models import UName
 
