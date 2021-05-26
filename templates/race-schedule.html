@@ -31,13 +31,30 @@
                 <th>updated_at</th>
             </tr>
 
-            {% for u_name in u_names %}
+            {% for race in races %}
             <tr>
-                <td>{{u_name.u_id}}</td>
-                <td>{{u_name.u_farm_name}}</td>
-                <td>{{u_name.u_name}}</td>
-                <td>{{u_name.created_at}}</td>
-                <td>{{u_name.updated_at}}</td>
+                <td>{{race.u-name-id}}</td>
+                <td>{{race.u-farm-name}}</td>
+                <td>{{race.u-name}}</td>
+                <td>{{race.created_at}}</td>
+                <td>{{race.updated_at}}</td>
+                <td>{{race.race_id}}</td>
+                <td>{{race.class_id}}</td>
+                <td>{{race.calendar_id}}</td>
+                <td>{{race.race_name}}</td>
+                <td>{{race.meters}}</td>
+                <td>{{race.grade_id}}</td>
+                <td>{{race.grade}}</td>
+                <td>{{race.course_id}}</td>
+                <td>{{race.course}}</td>
+                <td>{{race.roll_id}}</td>
+                <td>{{race.roll}}</td>
+                <td>{{race.type_distance_id}}</td>
+                <td>{{race.type_distance}}</td>
+                <td>{{race.type_ground_id}}</td>
+                <td>{{race.type_ground}}</td>
+                <td>{{race.created_at}}</td>
+                <td>{{race.updated_at}}</td>
             </tr>
             {% endfor %}
         </table>
