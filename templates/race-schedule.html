@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>race-schedule 一覧</title>
+    </head>
+    <body>
+        <h1>race-schedule 一覧</h1>
+        <table>
+            <tr>
+                <th>u-name-id</th>
+                <th>u-farm-name</th>
+                <th>u-name</th>
+                <th>created_at</th>
+                <th>updated_at</th>
+                <th>race_id</th>
+                <th>class_id</th>
+                <th>calendar_id</th>
+                <th>race_name</th>
+                <th>meters</th>
+                <th>grade_id</th>
+                <th>grade</th>
+                <th>course_id</th>
+                <th>course</th>
+                <th>roll_id</th>
+                <th>roll</th>
+                <th>type_distance_id</th>
+                <th>type_distance</th>
+                <th>type_ground_id</th>
+                <th>type_ground</th>
+                <th>created_at</th>
+                <th>updated_at</th>
+            </tr>
+
+            {% for u_name in u_names %}
+            <tr>
+                <td>{{u_name.u_id}}</td>
+                <td>{{u_name.u_farm_name}}</td>
+                <td>{{u_name.u_name}}</td>
+                <td>{{u_name.created_at}}</td>
+                <td>{{u_name.updated_at}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
