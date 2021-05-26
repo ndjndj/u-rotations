@@ -7,11 +7,6 @@
         <h1>race-schedule 一覧</h1>
         <table>
             <tr>
-                <th>u-name-id</th>
-                <th>u-farm-name</th>
-                <th>u-name</th>
-                <th>created_at</th>
-                <th>updated_at</th>
                 <th>race_id</th>
                 <th>class_id</th>
                 <th>calendar_id</th>
@@ -33,11 +28,6 @@
 
             {% for race in races %}
             <tr>
-                <td>{{race.u-name-id}}</td>
-                <td>{{race.u-farm-name}}</td>
-                <td>{{race.u-name}}</td>
-                <td>{{race.created_at}}</td>
-                <td>{{race.updated_at}}</td>
                 <td>{{race.race_id}}</td>
                 <td>{{race.class_id}}</td>
                 <td>{{race.calendar_id}}</td>
