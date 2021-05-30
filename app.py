@@ -1,13 +1,19 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, make_response, jsonfiy
+from flask_cors import CORS
 from models.models import UName, RaceCalendar
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/')
 def hello_world():
     message = "Hello World"
 
     return message
+
+@app.route('/json-test', method=['GET'])
+def json_parse():
+    return
 
 @app.route('/u-rotation')
 def u_rotation():
@@ -22,6 +28,7 @@ def u_names():
 def u_race():
     race_data = RaceCalendar.query.all()
     return render_template("race-schedule.html", races=race_data)
+
 
 
 if __name__ == '__main__':
