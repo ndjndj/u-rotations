@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, make_response, jsonfiy
+from flask import Flask, render_template, request, make_response, jsonify
 from flask_cors import CORS
 from models.models import UName, RaceCalendar
 
@@ -11,9 +11,10 @@ def hello_world():
 
     return message
 
-@app.route('/json-test', method=['GET'])
+@app.route('/json-test', methods=['GET','POST'])
 def json_parse():
-    return
+    
+    return make_response(jsonify({'result': UName.query.all()}))
 
 @app.route('/u-rotation')
 def u_rotation():
