@@ -28,8 +28,6 @@ def json_parse():
         for u in u_names_data
     ]
 
-    print(data)
-
     return jsonify(data)
 
 @app.route('/u-rotation')
