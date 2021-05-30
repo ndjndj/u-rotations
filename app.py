@@ -3,7 +3,7 @@ from flask_cors import CORS
 from models.models import UName, RaceCalendar
 
 app = Flask(__name__)
-
+app.config['JSON_AS_ASCII'] = False # 日本語文字化け回避
 
 CORS(app)
 
