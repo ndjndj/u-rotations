@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 from models.models import UName, RaceCalendar
 
 app = Flask(__name__)
