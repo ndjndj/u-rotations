@@ -13,7 +13,7 @@ def hello_world():
 
     return message
 
-@app.route('/json-test')
+@app.route('/json-test', methods=['GET'])
 def json_parse():
     u_names_data = UName.query.all()
 
