@@ -3,6 +3,8 @@ from flask_cors import CORS
 from models.models import UName, RaceCalendar
 
 app = Flask(__name__)
+
+
 CORS(app)
 
 @app.route('/')
@@ -11,10 +13,24 @@ def hello_world():
 
     return message
 
-@app.route('/json-test', methods=['GET','POST'])
+@app.route('/json-test')
 def json_parse():
-    
-    return make_response(jsonify({'result': UName.query.all()}))
+    u_names_data = UName.query.all()
+
+    data = [
+        {
+            'id': u.u_id,
+            'farm': u.u_farm_name,
+            'name': u.u_name,
+            'created_at': u.created_at,
+            'updated_at': u.updated_at
+        }
+        for u in u_names_data
+    ]
+
+    print(data)
+
+    return jsonify(data)
 
 @app.route('/u-rotation')
 def u_rotation():
